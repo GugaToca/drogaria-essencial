@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Drogaria Essencial Saúde | Sua farmácia de confiança</title>
+
+  <meta name="description" content="Drogaria Essencial Saúde – medicamentos, perfumaria, orientações farmacêuticas e entrega rápida. Compre online, no balcão, por telefone ou WhatsApp." />
+  <meta name="theme-color" content="#0f4c5c" />
+  <meta property="og:title" content="Drogaria Essencial Saúde" />
+  <meta property="og:description" content="Medicamentos e perfumaria com atendimento humano e orientação farmacêutica." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/favicon.png" />
+  <link rel="icon" href="/favicon.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Schema.org: dados estruturados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Pharmacy",
+    "name": "Drogaria Essencial Saúde",
+    "image": "/favicon.png",
+    "url": "https://www.essencialsaude.com.br/",
+    "telephone": "+55 17 99207-7028",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Exemplo, 123",
+      "addressLocality": "São José do Rio Preto",
+      "addressRegion": "SP",
+      "postalCode": "15000-000",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:30", "closes": "20:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "18:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "13:00"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#conteudo" class="chip" style="position:absolute;left:-9999px;top:-9999px">Pular para o conteúdo</a>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div>Entrega em até <strong>2h</strong> na região • <span class="chip">Descontos PBM</span></div>
+      <div class="pill-list">
+        <a href="tel:+5517999999999">(17) 9 9207-7928</a>
+        <span>•</span>
+        <a href="https://wa.me/5517999999999?text=Olá%2C%20quero%20fazer%20um%20pedido%20na%20Drogaria%20Essencial%20Saúde" rel="noopener" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Menu -->
+  <header>
+    <nav class="container">
+      <div class="logo" aria-label="Drogaria Essencial Saúde">
+        <img src="logo_drogaria_SAUDE.png" alt="Logo Drogaria Essencial Saúde" class="logo-img">
+     </div>
+
+      <input id="hamb" type="checkbox" hidden>
+      <label for="hamb" class="ham-btn" aria-label="Abrir menu">☰ Menu</label>
+
+      <div class="menu" role="navigation" aria-label="Menu principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#orientacoes">Orientações</a>
+        <a href="#contato">Contato</a>
+        <a href="#pedido" class="btn small cta">Fazer pedido</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo -->
+  <main id="conteudo">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container wrap">
+        <div>
+          <span class="chip">Drogaria Essencial • Atendimento humano</span>
+          <h1>Essencial é ter saúde por perto.</h1>
+          <p>Medicamentos, perfumaria e orientação farmacêutica com entrega rápida. Peça pelo site, WhatsApp ou retire na loja.</p>
+
+          <div class="search">
+            <input id="q" type="search" placeholder="Busque por nome do medicamento, princípio ativo ou marca…" aria-label="Buscar produtos">
+            <button class="btn" onclick="buscar()">Buscar</button>
+            <button class="btn secondary" onclick="abrirCart()">Carrinho <span id="cart-count" class="chip">0</span></button>
+          </div>
+
+          <div class="kpis">
+            <div><strong>PBM</strong><p class="muted">Descontos com programas de laboratório</p></div>
+            <div><strong>Receita</strong><p class="muted">Anexar foto no pedido</p></div>
+            <div><strong>Entrega</strong><p class="muted">Agendada ou expressa</p></div>
+          </div>
+        </div>
+
+        <div class="card shadow"> 
+            <img src="imagem_drogaria.jpg" alt="Atendente em drogaria separando medicamentos"> 
+        </div> </div> 
+    </section>
+
+
+    <!-- Catálogo -->
+    <section class="section container" id="catalogo">
+      <h2>Catálogo</h2>
+      <p class="lead">Seleção inicial. Filtre por categoria e adicione ao carrinho.</p>
+
+      <div class="pill-list" style="margin:.6rem 0 1rem">
+        <button class="btn ghost small" onclick="filtrar('todos')">Todos</button>
+        <button class="btn ghost small" onclick="filtrar('medicamentos')">Medicamentos</button>
+        <button class="btn ghost small" onclick="filtrar('perfumaria')">Perfumaria</button>
+        <button class="btn ghost small" onclick="filtrar('higiene')">Higiene</button>
+        <button class="btn ghost small" onclick="filtrar('infantil')">Infantil</button>
+      </div>
+
+      <div id="produtos" class="grid-4"></div>
+    </section>
+
+    <!-- Ofertas -->
+    <section class="section container" id="ofertas">
+      <h2>Ofertas da Semana</h2>
+      <div id="ofertas-grid" class="grid-4"></div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="section container" id="servicos">
+      <h2>Serviços</h2>
+      <div class="grid-3">
+        <div class="card"><div class="body"><h3>Aferição de pressão</h3><p>Rápida e segura, sem necessidade de agendamento.</p></div></div>
+        <div class="card"><div class="body"><h3>Aplicação de injetáveis</h3><p>Conforme prescrição médica. Trazer receita e documento.</p></div></div>
+        <div class="card"><div class="body"><h3>Orientação farmacêutica</h3><p>Esclareça dúvidas sobre uso correto e interações.</p></div></div>
+      </div>
+    </section>
+
+    <!-- Orientações -->
+    <section class="section container" id="orientacoes">
+      <h2>Orientações & conformidade</h2>
+      <div class="split">
+        <div>
+          <div class="notice">
+            <strong>Antimicrobianos e controlados:</strong> venda sob retenção/controle de receita conforme legislação vigente.
+          </div>
+
+          <h3 style="margin-top:1rem">Perguntas frequentes</h3>
+          <div class="faq">
+            <details><summary>Posso enviar receita por foto?</summary><p>Sim, pode anexar ou enviar via WhatsApp.</p></details>
+            <details><summary>Entregam no mesmo dia?</summary><p>Sim, entrega expressa em até 2h conforme disponibilidade.</p></details>
+            <details><summary>Formas de pagamento?</summary><p>Pix, débito, crédito e dinheiro. Maquininha acompanha a entrega.</p></details>
+          </div>
+        </div>
+
+        <!-- Formulário de pedido -->
+        <form class="card" id="pedido" onsubmit="enviarPedido(event)" style="padding:1rem">
+          <h3>Pedido rápido</h3>
+
+          <label>Nome completo<br>
+            <input required name="nome" placeholder="Seu nome">
+          </label>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.6rem">
+            <label>Telefone/WhatsApp<br>
+              <input required name="fone" placeholder="(DD) 9 9999-9999">
+            </label>
+            <label>CEP<br>
+              <input required name="cep" placeholder="00000-000" pattern="\d{5}-?\d{3}">
+            </label>
+          </div>
+
+          <label style="display:block;margin-top:.6rem">Itens (ou descreva o medicamento)
+            <textarea required name="itens" rows="4" placeholder="Ex.: Dipirona 500mg, 20 comprimidos…"></textarea>
+          </label>
+
+          <label style="display:block;margin-top:.6rem">Anexar receita (opcional)
+            <input type="file" name="receita" accept="image/*,application/pdf">
+          </label>
+
+          <div style="display:flex;align-items:center;gap:.6rem;margin-top:.8rem">
+            <input type="checkbox" id="lgpd-consent" required>
+            <label for="lgpd-consent">Li e concordo com a <a href="#lgpd">Política de Privacidade</a></label>
+          </div>
+
+          <button class="btn" style="margin-top:.8rem">Enviar pedido</button>
+          <p style="color:#6b7280;font-size:.9rem;margin:.6rem 0 0">Após enviar, o atendimento continua via WhatsApp.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section container" id="contato">
+      <h2>Onde estamos</h2>
+      <div class="split">
+        <div>
+          <table class="table">
+            <tr><th>Endereço</th><td>Rua Exemplo, 123 – São José do Rio Preto/SP</td></tr>
+            <tr><th>Telefones</th><td><a href="tel:+5517999999999">(17) 9 9999-9999</a> • <a href="https://wa.me/5517999999999" target="_blank" rel="noopener">WhatsApp</a></td></tr>
+            <tr><th>Horários</th><td>Seg a Sex 07:30–20:00 • Sáb 08:00–18:00 • Dom 08:00–13:00</td></tr>
+            <tr><th>Farmacêutico Resp.</th><td>Nome Sobrenome – CRF/SP 00000</td></tr>
+          </table>
+
+          <div class="pill-list" style="margin-top:.6rem">
+            <span class="chip">Aceitamos Pix</span>
+            <span class="chip">Entrega Expressa</span>
+            <span class="chip">Estacionamento fácil</span>
+          </div>
+        </div>
+
+        <iframe class="map shadow" loading="lazy" allowfullscreen src="https://www.google.com/maps?q=S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20SP&output=embed" title="Mapa de localização"></iframe>
+      </div>
+    </section>
+
+    <!-- LGPD -->
+    <section class="section container" id="lgpd">
+      <h2>Política de Privacidade (LGPD)</h2>
+      <p class="lead">Usamos seus dados para processar pedidos, cumprir exigências legais e melhorar o atendimento.</p>
+      <ul>
+        <li>Dados coletados: identificação, contato, endereço, histórico de pedidos e anexos de receita.</li>
+        <li>Base legal: execução de contrato, obrigação legal e legítimo interesse.</li>
+        <li>Compartilhamento: parceiros logísticos, pagamentos e autoridades sanitárias.</li>
+        <li>Prazo de retenção: conforme legislação vigente.</li>
+        <li>Contato do DPO: <a href="mailto:privacidade@essencialsaude.com.br">privacidade@essencialsaude.com.br</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="color:#fff"><div class="mark">ES</div><div>Drogaria<br><strong>Essencial Saúde</strong></div></div>
+          <p style="color:#cfe7ed">Cuidar de você é essencial. Conte conosco todos os dias.</p>
+          <a class="btn small secondary" href="https://wa.me/5517999999999" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+        </div>
+
+        <div>
+          <h4>Atendimento</h4>
+          <ul style="list-style:none;padding:0;margin:0;color:#fff">
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#orientacoes">Orientações</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Institucional</h4>
+          <ul style="list-style:none;padding:0;margin:0;color:#fff">
+            <li><a href="#lgpd">Privacidade (LGPD)</a></li>
+            <li><a href="#">Termos de uso</a></li>
+            <li><a href="#">Trabalhe conosco</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sub">
+        <div>© <span id="yy"></span> Drogaria Essencial Saúde • CNPJ 00.000.000/0001-00</div>
+        <div>Desenvolvido com ♥</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Carrinho, Toast e Acessibilidade -->
+  <div class="cart shadow" id="cart" aria-live="polite" aria-label="Carrinho de compras">
+    <header><strong>Seu carrinho</strong></header>
+    <div class="items" id="cart-items"></div>
+    <div class="foot">
+      <div style="display:flex;justify-content:space-between"><span>Total</span><strong id="cart-total">R$ 0,00</strong></div>
+      <div class="pill-list" style="margin-top:.6rem">
+        <button class="btn small" onclick="checkout()">Enviar pedido pelo WhatsApp</button>
+        <button class="btn small secondary" onclick="fecharCart()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="a11y-tools">
+    <button title="Aumentar fonte" onclick="ajustarFonte(1)">A+</button>
+    <button title="Reduzir fonte" onclick="ajustarFonte(-1)">A-</button>
+    <button title="Alto contraste" onclick="toggleContraste()">◐</button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="lgpd" id="lgpdbar" role="dialog" aria-label="Consentimento de cookies e privacidade">
+    <div class="container row">
+      <div>
+        <strong>Privacidade:</strong> usamos dados para melhorar sua experiência.
+      </div>
+      <div class="pill-list">
+        <button class="btn small secondary" onclick="salvarLGPD('essencial')">Aceitar essencial</button>
+        <button class="btn small" onclick="salvarLGPD('tudo')">Aceitar tudo</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
