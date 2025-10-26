@@ -89,13 +89,13 @@ function updateCart() {
 function checkout() {
   if (!CART.length) { toast("Carrinho vazio"); return; }
   const resumo = CART.map(i => `${i.qtd}x ${i.nome} (R$ ${fmt(i.preco)})`).join("%0A");
-  const url = `https://wa.me/5517999999999?text=Olá!%20Quero%20finalizar%20meu%20pedido:%0A${resumo}`;
+  const url = `https://wa.me/5517992077928?text=Olá!%20Quero%20finalizar%20meu%20pedido:%0A${resumo}`;
   window.open(url, "_blank");
 }
 
 // Compra direta via Whats do card
 function whats(nome) {
-  const url = `https://wa.me/5517999999999?text=Olá!%20Tenho%20interesse%20em:%20${encodeURIComponent(nome)}`;
+  const url = `https://wa.me/5517992077928?text=Olá!%20Tenho%20interesse%20em:%20${encodeURIComponent(nome)}`;
   window.open(url, "_blank");
 }
 
@@ -179,3 +179,4 @@ document.addEventListener("click", (e) => {
     document.getElementById("lgpdbar").style.display = "block";
   }
 })();
+
